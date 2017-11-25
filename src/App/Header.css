@@ -1,0 +1,28 @@
+.header {
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0.15em 0.35em 0 rgba(0,0,0,0.135);
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 90px;
+}
+
+.header__logo-link {
+  max-width: 175px;
+  line-height: 0;
+  align-self: center;
+}
+
+.header__logo-link img {
+  max-width: 100%;
+}
