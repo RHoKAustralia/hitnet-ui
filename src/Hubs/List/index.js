@@ -48,7 +48,7 @@ class List extends Component {
         <ul>
           {this.state.hubs.map((hub, index) => {
             return <li key={index}>
-              <Link to={`${this.match.url}edit/${hub.id}`}>
+              <Link to={`${this.match.url}/edit/${hub.id}`}>
                 {hub.region}, {hub.country} <em>{hub.description}</em> - {hub.location_type}
               </Link>
               <button type="button" onClick={(e) => this.handleDelete(index, hub.id)}>
