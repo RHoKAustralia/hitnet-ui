@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import Button from '../../Button';
 
 class Edit extends Component {
   constructor(props) {
