@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "description": "Remote hub",
+  "country": "Australia",
+  "region": "Arnhem Land",
+  "location_type": "School",
+  "modules": [
+    {
+      "id": 1,
+      "name": "Module 1",
+      "description": "Module 1 description",
+      "actors": "Some free text field, Actor Name",
+      "country": [
+        "Australia"
+      ],
+      "cultural_group": [
+        "Aboriginal",
+        "Torres Strait Islander"
+      ],
+      "demographic": [
+        "Adult",
+        "Child"
+      ]
+    }
+  ]
+}

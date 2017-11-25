@@ -1,0 +1,19 @@
+{
+  "modules": [
+    {
+      "id": 1,
+      "name": "Module 1",
+      "description": "Module 1 description"
+    },
+    {
+      "id": 2,
+      "name": "Module 2",
+      "description": "Module 2 description"
+    },
+    {
+      "id": 3,
+      "name": "Module 3",
+      "description": "Module 3 description"
+    }
+  ]
+}

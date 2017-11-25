@@ -1,0 +1,15 @@
+{
+  "countries": [
+    {
+      "label": "Australia",
+      "regions": ["Cape York", "Arnhem Land"]
+    }
+  ],
+  "cultural_groups": [
+    "Indigenous",
+    "Chinese"
+  ],
+  "demographics": [
+    "Adult", "Child"
+  ]
+}
