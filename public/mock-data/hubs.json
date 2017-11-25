@@ -11,14 +11,14 @@
       "id": 2,
       "description": "Remote hub",
       "country": "Australia",
-      "region": "Arnhem Land",
+      "region": "Cape York",
       "location_type": "Prison"
     },
     {
       "id": 3,
       "description": "Remote hub",
       "country": "Australia",
-      "region": "Arnhem Land",
+      "region": "Darwin",
       "location_type": "Library"
     }
   ]

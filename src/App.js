@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 import Modules from './Modules';
+import Hubs from './Hubs';
 import './App.css';
 
 const Home = () => (
@@ -22,12 +23,14 @@ class App extends Component {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/modules">Modules</Link></li>
+            <li><Link to="/hubs">Hubs</Link></li>
           </ul>
 
           <hr/>
 
           <Route exact path="/" component={Home}/>
           <Route path="/modules" component={Modules}/>
+          <Route path="/hubs" component={Hubs}/>
         </div>
       </Router>
     );
