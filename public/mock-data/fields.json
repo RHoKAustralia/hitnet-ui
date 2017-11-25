@@ -10,6 +10,6 @@
     "Chinese"
   ],
   "demographics": [
-    "Adult", "Child"
+    "Male Elder", "Female Elder", "Male Adult", "Female Adult", "Male Teen", "Female Teen", "Male Child", "Female Child"
   ]
 }
