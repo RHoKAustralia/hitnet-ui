@@ -3,6 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
+## Deployment
+
+This project is deployed via Heroku. It uses a static buildpack in order to run on a Heroku dyno, as the app is just a frontend. The buildpack is a fork of heroku's OSS static buildback. We needed to add nginx config so the site would have basic auth for simple security.
+
 ## Table of Contents
 
 - [Updating to New Releases](#updating-to-new-releases)
