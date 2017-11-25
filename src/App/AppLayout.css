@@ -3,12 +3,12 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 .sidebar-list {
   flex: 1 1 25%;
   padding-top: 30px;
-  /*padding-right: 40px;*/
 }
 
 .sidebar-list ul {
@@ -40,8 +40,11 @@
   box-shadow: inset 4px 0 0 0 #ff2a13;
 }
 
-.sidebar-list + .content {
+.content {
   flex: 1 1 75%;
+}
+
+.sidebar-list + .content {
   padding-left: 40px;
 }
 

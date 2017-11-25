@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Axios from 'axios';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import Button from '../../Button';
 
 class Edit extends Component {
   constructor(props) {

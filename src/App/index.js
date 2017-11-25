@@ -15,7 +15,7 @@ const Home = () => (
     <div className="title">
       <h1>Hitnet Hub Management</h1>
     </div>
-    <div class="container">
+    <div className="container">
       <div className="content">
         <img src={mapImg} alt="Hitnet hubs spread across Australia" />
       </div>
