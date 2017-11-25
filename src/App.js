@@ -4,7 +4,6 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import logo from './logo.svg';
 import Modules from './Modules';
 import './App.css';
 

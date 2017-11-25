@@ -4,8 +4,8 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-import logo from './logo.svg';
 import './Modules.css';
+import New from './New';
 
 const List = () => (
   <div>
@@ -13,17 +13,44 @@ const List = () => (
   </div>
 )
 
-const New = () => (
+const Edit = ({ match }) => (
   <div>
-    <h2>New Module</h2>
+    <h3>Edit: {match.params.id}</h3>
   </div>
 )
 
-const Edit = ({ match }) => (
-  <div>
-    <h3>{match.params.moduleId}</h3>
-  </div>
-)
+class Modules extends Component {
+  constructor(props) {
+    super();
+    this.match = props.match;
+    console.log(this.match);
+  }
+  render() {
+    return (
+      <Router>
+        <div className="Modules">
+
+          <ul>
+            <li><Link to={`${this.match.url}/`}>View all modules</Link></li>
+            <li><Link to={`${this.match.url}/new`}>New module</Link></li>
+            <li><Link to={`${this.match.url}/edit`}>Edit module</Link></li>
+          </ul>
+
+          <hr/>
+
+          <Route exact path={`${this.match.url}/`} component={List}/>
+          <Route path={`${this.match.url}/new`} component={New}/>
+          <Route path={`${this.match.url}/edit/:id`} component={Edit}/>
+        </div>
+      </Router>
+    );
+  }
+}
+
+export default Modules;
+
+
+
 
 // const Topics = ({ match }) => (
 //   <div>
@@ -53,27 +80,3 @@ const Edit = ({ match }) => (
 //   </div>
 // )
 
-class Modules extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="Modules">
-
-          <ul>
-            <li><Link to="/">View all modules</Link></li>
-            <li><Link to="/new">New module</Link></li>
-            <li><Link to="/edit">Edit module</Link></li>
-          </ul>
-
-          <hr/>
-
-          <Route exact path="/" component={List}/>
-          <Route path="/new" component={New}/>
-          <Route path="/edit" component={Edit}/>
-        </div>
-      </Router>
-    );
-  }
-}
-
-export default Modules;
