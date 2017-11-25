@@ -10,13 +10,14 @@ class Edit extends Component {
       module: {
         name: '',
         path: '',
-        description: ''
+        description: '',
+        actors: ''
       },
       isNewModule: !this.match.params.id // so slick
     };
 
     console.log('is this a new module ', !this.match.params.id);
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -41,7 +42,7 @@ class Edit extends Component {
 
   // Send submitted module data to API
   postModule(data) {
-    
+
   }
 
   // Run when any form input is changed
@@ -79,6 +80,21 @@ class Edit extends Component {
             <span>Description:</span>
             <input type="text" value={this.state.module.description} name="description" onChange={this.handleChange} />
           </label><br />
+          <label>
+            <span>Actors:</span>
+            <textarea name="actors" onChange={this.handleChange}>{this.state.module.actors}</textarea>
+          </label><br />
+          Demographic:
+          <ul>
+            <li><label><input type="checkbox" name="demographic" /> Elder Male</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Elder Female</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Adult Male</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Adult Female</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Teen Male</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Teen Female</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Child Male</label></li>
+            <li><label><input type="checkbox" name="demographic" /> Child Female</label></li>
+          </ul>
           <button type="submit">{this.state.isNewModule ? `Add` : `Update`} module</button>
         </form>
       </div>
