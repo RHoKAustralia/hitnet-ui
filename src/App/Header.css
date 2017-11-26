@@ -19,11 +19,23 @@
 }
 
 .header__logo-link {
-  max-width: 175px;
   line-height: 0;
   align-self: center;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header__logo-link > * {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .header__logo-link img {
-  max-width: 100%;
+  max-width: 175px;
+}
+
+.header__logo-link span {
+  color: #000;
+  font-size: 30px;
+  margin-left: 4px;
 }
