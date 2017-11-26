@@ -1,5 +1,4 @@
 import Axios from 'axios';
-import path from 'path';
 
 const CORS_PROXY = 'https://crossorigin.me/'
 const ENDPOINT = 'http://54.153.171.157';
@@ -86,7 +85,7 @@ const api = {
   //   }
   // ]
   getHubsList: function() {
-    return Axios.get('/mock-data/hubs.json')
+    return Axios.get(CORS_PROXY + ENDPOINT + '/hub')
       .catch(err => {
         console.error(err);
       });

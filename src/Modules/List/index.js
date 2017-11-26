@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import path from 'path';
-import Axios from 'axios';
 import api from '../../utils/api';
 
 class List extends Component {
@@ -11,7 +9,8 @@ class List extends Component {
     super();
     this.match = props.match;
     this.state = {
-      modules: []
+      modules: [],
+      loading: true
     }
 
     this.getModules();
@@ -20,8 +19,14 @@ class List extends Component {
   getModules() {
     api.getModulesList()
       .then(res => {
-        console.log(res);
-        // this.setState({modules: res.data.modules});
+        if(res.status === 200) {
+          this.setState({
+            modules: res.data,
+            loading: false
+          });
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       })
       .catch(err => {
         console.error(err);
@@ -50,15 +55,11 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.state.loading ? 'loading' : 'loading loaded'}>
+        <img src="/loading.svg" className="loading__spinner" alt="Loading data" height="150" width="150" />
         <h2>View all modules</h2>
         <ul className="List">
           {this.state.modules.map((module, index) => {
-<<<<<<< HEAD
-            return <li key={index}>
-              <Link to={path.join(this.match.url, `/edit/${module.id}`)}>
-                {module.name}
-=======
             return <li className="List__Item Module" key={index}>
               <div>
                 <div className="Module__Name">{module.name}</div>
@@ -66,7 +67,6 @@ class List extends Component {
               </div>
               <Link className="Button" to={`${this.match.url}/edit/${module.id}`}>
                 Edit
->>>>>>> origin/master
               </Link>
               <button type="button" className="Button" onClick={(e) => this.handleDelete(index, module.id)}>
                 Delete

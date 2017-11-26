@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import path from 'path';
 import api from '../../utils/api';
 
 class List extends Component {
@@ -10,7 +9,8 @@ class List extends Component {
     super();
     this.match = props.match;
     this.state = {
-      hubs: []
+      hubs: [],
+      loading: true
     }
 
     this.getHubs();
@@ -19,7 +19,14 @@ class List extends Component {
   getHubs() {
     return api.getHubsList()
       .then(res => {
-        this.setState({hubs: res.data.hubs});
+        if(res.status === 200) {
+          this.setState({
+            hubs: res.data,
+            loading: false
+          });
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       });
   }
 
@@ -41,7 +48,8 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.state.loading ? 'loading' : 'loading loaded'}>
+        <img src="/loading.svg" className="loading__spinner" alt="Loading data" height="150" width="150" />
         <h2>View all hubs</h2>
         <ul className="List">
           {this.state.hubs.map((hub, index) => {

@@ -30,16 +30,19 @@ class Edit extends Component {
 
   // Load module data
   getModule(id) {
-    api.getOneModule(id)
+    api.getModuleById(id)
       .then(res => {
-        console.log(res.data);
-        this.setState({module: res.data});
+        if(res.status === 200) {
+          this.setState({module: res.data});
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       });
   }
 
   // Send submitted module data to API
   postModule(data) {
-
+    
   }
 
   // Run when any form input is changed

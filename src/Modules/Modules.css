@@ -15,3 +15,20 @@
   font-style: italic;
   font-size: 14px;
 }
+
+.loading {
+  position: relative;
+  min-height: 300px;
+}
+
+.loading .loading__spinner {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading.loaded .loading__spinner {
+  display: none;
+}
