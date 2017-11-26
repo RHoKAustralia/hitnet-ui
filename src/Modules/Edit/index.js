@@ -29,7 +29,8 @@ class Edit extends Component {
       "State",
       "Region",
       "Location type",
-      "Individual hub"
+      "Individual hub",
+      "None"
     ]
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -161,8 +162,6 @@ class Edit extends Component {
           </ul>
 
           <h3>Attach module to hubs</h3>
-
-          <p>Attach all to hubs:</p>
           <ul className="Input-List">
             {this.hubGroups.map((item, index) => {
               return <li key={index}>
