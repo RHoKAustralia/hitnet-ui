@@ -9,7 +9,7 @@ const Header = () => (
     <div className="header__container">
       <Link to="/" className="header__logo-link">
         <img src={logo} alt=""/>
-        <span>Hub Admin</span>
+        <span>Hub Manager</span>
       </Link>
 
       <nav className="nav">
