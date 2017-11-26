@@ -6,5 +6,6 @@
   "country": ["Australia"],
   "cultural_group": ["Aboriginal", "Torres Strait Islander"],
   "demographic": ["Adult", "Child"],
-  "path": "/path/to/module"
+  "path": "/path/to/module",
+  "hubs": []
 }

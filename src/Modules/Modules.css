@@ -2,6 +2,11 @@
   padding-bottom: 20px;
 }
 
+.Modules__Hub-Select {
+  width: 300px;
+  margin: 20px 0;
+}
+
 .Module {
 
 }
@@ -31,4 +36,10 @@
 
 .loading.loaded .loading__spinner {
   display: none;
+}
+.Module__Hub-List {
+
+}
+.Module__Hub-List--Disabled {
+  opacity: 0.5
 }
