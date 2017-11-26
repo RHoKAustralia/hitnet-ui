@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-// import './Modules.css';
-// import New from './New';
 import {
   Link
 } from 'react-router-dom';
+import path from 'path';
 import Axios from 'axios';
+import api from '../../utils/api';
 
 class List extends Component {
   constructor(props) {
@@ -18,18 +18,20 @@ class List extends Component {
   }
 
   getModules() {
-    Axios.get('/mock-data/modules.json')
+    api.getModulesList()
       .then(res => {
-        this.setState({modules: res.data.modules});
-      })
-      .catch(err => {
-        console.error(err);
+        console.log(res);
+        // this.setState({modules: res.data.modules});
       });
   }
 
   // Delete module from API
   deleteModule(id) {
     console.log('Deleting module', id);
+    api.deleteModule(id)
+      .then(res => {
+        alert('Deleted module', id);
+      });
   }
 
   // Delete 
@@ -50,7 +52,7 @@ class List extends Component {
         <ul>
           {this.state.modules.map((module, index) => {
             return <li key={index}>
-              <Link to={`${this.match.url}edit/${module.id}`}>
+              <Link to={path.join(this.match.url, `/edit/${module.id}`)}>
                 {module.name}
               </Link>
               <button type="button" onClick={(e) => this.handleDelete(index, module.id)}>

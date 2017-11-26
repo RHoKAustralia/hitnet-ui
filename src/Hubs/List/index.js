@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   Link
 } from 'react-router-dom';
-import Axios from 'axios';
+import path from 'path';
+import api from '../../utils/api';
 
 class List extends Component {
   constructor(props) {
@@ -16,12 +17,9 @@ class List extends Component {
   }
 
   getHubs() {
-    Axios.get('/mock-data/hubs.json')
+    return api.getHubsList()
       .then(res => {
         this.setState({hubs: res.data.hubs});
-      })
-      .catch(err => {
-        console.error(err);
       });
   }
 
@@ -48,7 +46,7 @@ class List extends Component {
         <ul>
           {this.state.hubs.map((hub, index) => {
             return <li key={index}>
-              <Link to={`${this.match.url}edit/${hub.id}`}>
+              <Link to={path.join(this.match.url, `/edit/${hub.id}`)}>
                 {hub.region}, {hub.country} <em>{hub.description}</em> - {hub.location_type}
               </Link>
               <button type="button" onClick={(e) => this.handleDelete(index, hub.id)}>
