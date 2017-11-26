@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import './Modules.css';
-import Axios from 'axios';
+import api from '../../utils/api';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 class Edit extends Component {
@@ -45,19 +44,19 @@ class Edit extends Component {
 
   // Load module data
   getModule(id) {
-    Axios.get(`/mock-data/module-${id}.json`)
+    api.getModuleById(id)
       .then(res => {
-        console.log(res.data);
-        this.setState({module: res.data});
-      })
-      .catch(err => {
-        console.error(err);
+        if(res.status === 200) {
+          this.setState({module: res.data});
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       });
   }
 
   // Send submitted module data to API
   postModule(data) {
-
+    
   }
 
   // Run when any form input is changed
@@ -74,8 +73,11 @@ class Edit extends Component {
   // Run when form is submitted
   handleSubmit(event) {
     event.preventDefault();
-    console.log('form submitted', this.state.module);
-    // this.postModule(this.state.module);
+    // console.log('form submitted', this.state.module);
+    api.createModule({"name": "My module", "path": "/path/module"})
+      .then(res => {
+        console.log(res);
+      });
   }
 
   handleHubSelect(option) {

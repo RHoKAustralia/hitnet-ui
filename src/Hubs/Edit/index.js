@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import api from '../../utils/api';
 import Button from '../../Button';
 
 class Edit extends Component {
@@ -29,12 +29,13 @@ class Edit extends Component {
 
   // Load hub data
   getHub(id) {
-    Axios.get(`/mock-data/hub-${id}.json`)
+    return api.getHubById(id)
       .then(res => {
-        this.setState({hub: res.data});
-      })
-      .catch(err => {
-        console.error(err);
+        if(res.status === 200) {
+          this.setState({hub: res.data});
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       });
   }
 

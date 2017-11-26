@@ -1,26 +1,32 @@
 import React, { Component } from 'react';
-// import './Modules.css';
-// import New from './New';
 import {
   Link
 } from 'react-router-dom';
-import Axios from 'axios';
+import api from '../../utils/api';
 
 class List extends Component {
   constructor(props) {
     super();
     this.match = props.match;
     this.state = {
-      modules: []
+      modules: [],
+      loading: true
     }
 
     this.getModules();
   }
 
   getModules() {
-    Axios.get('/mock-data/modules.json')
+    api.getModulesList()
       .then(res => {
-        this.setState({ modules: res.data.modules });
+        if(res.status === 200) {
+          this.setState({
+            modules: res.data,
+            loading: false
+          });
+        } else {
+          alert('Sorry, something went wrong trying to fetch the data! Please refresh and try again.');
+        }
       })
       .catch(err => {
         console.error(err);
@@ -30,6 +36,10 @@ class List extends Component {
   // Delete module from API
   deleteModule(id) {
     console.log('Deleting module', id);
+    api.deleteModule(id)
+      .then(res => {
+        alert('Deleted module', id);
+      });
   }
 
   // Delete
@@ -45,7 +55,8 @@ class List extends Component {
 
   render() {
     return (
-      <div>
+      <div className={this.state.loading ? 'loading' : 'loading loaded'}>
+        <img src="/loading.svg" className="loading__spinner" alt="Loading data" height="150" width="150" />
         <h2>View all modules</h2>
         <ul className="List">
           {this.state.modules.map((module, index) => {
