@@ -3,6 +3,6 @@
   "description": "Remote hub",
   "country": "Australia",
   "region": "Arnhem Land",
-  "location_type": "School",
+  "loc_type": "School",
   "modules_list": []
 }
