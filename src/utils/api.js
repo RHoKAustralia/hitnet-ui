@@ -1,6 +1,7 @@
 import Axios from 'axios';
+import querystring from 'querystring';
 
-const CORS_PROXY = 'https://crossorigin.me/'
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 const ENDPOINT = 'http://54.153.171.157';
 
 const api = {
@@ -51,7 +52,11 @@ const api = {
 
   createModule: function(module) {
     console.log(module);
-    return Axios.post(CORS_PROXY + ENDPOINT + '/insert/', module, {
+    if(module.hubs) {
+      delete module.hubs;
+    }
+    console.log(module);
+    return Axios.post(CORS_PROXY + ENDPOINT + '/insert', querystring.stringify(module), {
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
       }
