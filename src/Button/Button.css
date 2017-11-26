@@ -1,9 +1,21 @@
 .Button {
   color: #ffffff;
-  border-color: #e271aa;
+  border: none;
   background-color: #e271aa;
   margin-bottom: 0.25em;
   text-shadow: 0 0.075em 0.075em rgba(0,0,0,0.5);
   box-shadow: 0 0.25em 0 0 #e24f99, 0 4px 9px rgba(0,0,0,0.75);
   border-radius: 0.25em;
+  padding: 5px 8px;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 25px;
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+}
+
+.Button:hover {
+  background-color: #e24f99;
+  box-shadow: 0 0.25em 0 0 #be4282, 0 4px 9px rgba(0,0,0,0.75);
 }

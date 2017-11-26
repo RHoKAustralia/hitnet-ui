@@ -19,3 +19,11 @@
   font-size: 48px;
   color: white;
 }
+
+a {
+  color: #cc0099;
+}
+
+a:hover {
+  text-decoration: none;
+}

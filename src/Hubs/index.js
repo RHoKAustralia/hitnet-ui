@@ -19,15 +19,11 @@ class Hubs extends Component {
     return (
       <Router>
         <div className="Hubs">
-          <div className="title">
-            <h1>Hubs</h1>
-          </div>
-
           <section className="container">
             <div className="sidebar-list">
               <ul>
                 <li><NavLink exact to={path.join(this.match.url, '/')} activeClassName="is-active">View all hubs</NavLink></li>
-                <li><NavLink to={path.join(this.match.url, '/new')} activeClassName="is-active">New hub</NavLink></li>
+                <li><NavLink to={path.join(this.match.url, '/new')} activeClassName="is-active">Add new hub</NavLink></li>
               </ul>
             </div>
 
