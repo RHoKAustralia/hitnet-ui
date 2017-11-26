@@ -74,7 +74,7 @@ class Edit extends Component {
   handleSubmit(event) {
     event.preventDefault();
     // console.log('form submitted', this.state.module);
-    api.createModule({"name": "How to insert a new module", "path": "/path/module"})
+    api.createModule(this.state.module)
       .then(res => {
         console.log(res);
       });

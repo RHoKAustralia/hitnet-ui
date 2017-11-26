@@ -19,6 +19,7 @@ class List extends Component {
   getModules() {
     api.getModulesList()
       .then(res => {
+        console.log(res);
         if(res.status === 200) {
           this.setState({
             modules: res.data,
