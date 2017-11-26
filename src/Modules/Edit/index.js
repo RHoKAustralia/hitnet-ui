@@ -65,7 +65,7 @@ class Edit extends Component {
 
   render() {
     return (
-      <div className="Edit">
+      <div className="Modules">
         <h2>{this.state.isNewModule ? `Add` : `Edit`} module</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -85,7 +85,7 @@ class Edit extends Component {
             <textarea name="actors" onChange={this.handleChange}>{this.state.module.actors}</textarea>
           </label><br />
           Demographic:
-          <ul>
+          <ul className="Input-List">
             <li><label><input type="checkbox" name="demographic" /> Elder Male</label></li>
             <li><label><input type="checkbox" name="demographic" /> Elder Female</label></li>
             <li><label><input type="checkbox" name="demographic" /> Adult Male</label></li>
@@ -95,7 +95,7 @@ class Edit extends Component {
             <li><label><input type="checkbox" name="demographic" /> Child Male</label></li>
             <li><label><input type="checkbox" name="demographic" /> Child Female</label></li>
           </ul>
-          <button type="submit">{this.state.isNewModule ? `Add` : `Update`} module</button>
+          <button type="submit" className="Button">{this.state.isNewModule ? `Add` : `Update`} module</button>
         </form>
       </div>
     );

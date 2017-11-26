@@ -21,8 +21,17 @@ class Edit extends Component {
         { value: '1234', label: 'The Diabetes Story' },
         { value: '4321', label: 'Care fo Kids Ear Health' }
       ],
-      moduleOptionsRemoved: []
+      moduleOptionsRemoved: [],
+      isModuleSelectDisabled: true
     };
+
+    this.moduleGroups = [
+      "Nationally",
+      "State",
+      "Region",
+      "Location type",
+      "Individually"
+    ]
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -92,6 +101,18 @@ class Edit extends Component {
     })
   }
 
+  handleModuleGroupChange(option) {
+    if (option === "Individually") {
+      this.setState({
+        isModuleSelectDisabled: false
+      });
+    } else {
+      this.setState({
+        isModuleSelectDisabled: true
+      });
+    }
+  }
+
   // Run when form is submitted
   handleSubmit(event) {
     event.preventDefault();
@@ -101,7 +122,7 @@ class Edit extends Component {
 
   render() {
     return (
-      <div className="Edit">
+      <div className="Hubs">
         <h2>{this.state.isNewHub ? `Add` : `Edit`} hub</h2>
         <form onSubmit={this.handleSubmit}>
           <label>
@@ -116,31 +137,44 @@ class Edit extends Component {
             <span>Description:</span>
             <input type="text" value={this.state.hub.description} name="description" onChange={this.handleChange} />
           </label><br />
-          {/* TODO: Make this checkboxes */}
           <label>
             <span>Location type:</span>
             <input type="text" value={this.state.hub.location_type} name="description" onChange={this.handleChange} />
           </label><br />
-          <button type="submit">{this.state.isNewHub ? `Add` : `Update`} hub</button>
-
-          <hr />
 
           <h3>Attach modules</h3>
 
-          <Select
-            name="moduleSelect"
-            onChange={(value) => this.handleModuleSelect(value)}
-            options={this.state.moduleOptions}
-          />
-
-          <ul>
-            {this.state.hub.modules_list.map((module, index) => {
-              return <li key={index}>
-                {module.label}
-                <button type="button" onClick={() => this.handleRemoveModule(index, module)}>Remove module</button>
+          <p>Attach all modules:</p>
+          <ul className="Input-List">
+            {this.moduleGroups.map((item) => {
+              return <li>
+                <label><input type="radio" name="moduleGroup" onChange={() => this.handleModuleGroupChange(item)} /> {item}</label>
               </li>
             })}
           </ul>
+
+          <div className={this.state.isModuleSelectDisabled && !this.state.hub.modules_list.length ? "hidden": ""}>
+            <label>Select individual modules:</label>
+            <Select
+              className="Hub__Module-Select"
+              name="moduleSelect"
+              onChange={(value) => this.handleModuleSelect(value)}
+              options={this.state.moduleOptions}
+              disabled={this.state.isModuleSelectDisabled}
+            />
+          </div>
+
+
+          <ul className={"List Hub__Modules-List " + (this.state.isModuleSelectDisabled ? "List Hub__Modules-List--Disabled" : '')}>
+            {this.state.hub.modules_list.map((module, index) => {
+              return <li key={index} className="List__Item">
+                <div>{module.label}</div>
+                <button type="button" className="Button" onClick={() => this.handleRemoveModule(index, module)} disabled={this.state.isModuleSelectDisabled}>Remove module</button>
+              </li>
+            })}
+          </ul>
+
+          <button type="submit" className="Button">{this.state.isNewHub ? `Add` : `Update`} hub</button>
 
         </form>
       </div>

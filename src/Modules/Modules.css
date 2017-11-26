@@ -1,3 +1,17 @@
 .Modules {
-  /*background: papayawhip;*/
+  padding-bottom: 20px;
+}
+
+.Module {
+
+}
+
+.Module__Name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.Module__Description {
+  font-style: italic;
+  font-size: 14px;
 }

@@ -8,13 +8,12 @@ import Hubs from '../Hubs';
 import Header from './Header';
 import './App.css';
 import './AppLayout.css';
+import './Forms.css';
+import './List.css';
 import mapImg from './hitnet-map.jpg';
 
 const Home = () => (
   <div>
-    <div className="title">
-      <h1>Hitnet Hub Management</h1>
-    </div>
     <div className="container">
       <div className="content">
         <img src={mapImg} alt="Hitnet hubs spread across Australia" />
