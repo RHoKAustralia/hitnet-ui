@@ -1,6 +1,6 @@
 import Axios from 'axios';
 
-const CORS_PROXY = 'https://crossorigin.me/'
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 const ENDPOINT = 'http://54.153.171.157';
 
 const api = {

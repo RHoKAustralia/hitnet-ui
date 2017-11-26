@@ -42,7 +42,7 @@ class Edit extends Component {
 
   // Send submitted module data to API
   postModule(data) {
-    
+
   }
 
   // Run when any form input is changed
@@ -60,7 +60,7 @@ class Edit extends Component {
   handleSubmit(event) {
     event.preventDefault();
     // console.log('form submitted', this.state.module);
-    api.createModule({"name": "My module", "path": "/path/module"})
+    api.createModule({"name": "How to insert a new module", "path": "/path/module"})
       .then(res => {
         console.log(res);
       });
