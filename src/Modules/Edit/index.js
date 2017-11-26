@@ -57,7 +57,7 @@ class Edit extends Component {
 
   // Send submitted module data to API
   postModule(data) {
-    
+
   }
 
   // Run when any form input is changed
@@ -151,10 +151,10 @@ class Edit extends Component {
           </label><br />
           Demographic:
           <ul className="Input-List">
-            <li><label><input type="checkbox" name="demographic" /> Elder Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Elder Female</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Adult Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Adult Female</label></li>
+            <li><label><input type="checkbox" name="demographic" checked="checked" /> Elder Male</label></li>
+            <li><label><input type="checkbox" name="demographic" checked="checked" /> Elder Female</label></li>
+            <li><label><input type="checkbox" name="demographic" checked="checked" /> Adult Male</label></li>
+            <li><label><input type="checkbox" name="demographic" checked="checked" /> Adult Female</label></li>
             <li><label><input type="checkbox" name="demographic" /> Teen Male</label></li>
             <li><label><input type="checkbox" name="demographic" /> Teen Female</label></li>
             <li><label><input type="checkbox" name="demographic" /> Child Male</label></li>

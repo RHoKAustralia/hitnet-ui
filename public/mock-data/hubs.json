@@ -5,21 +5,21 @@
       "description": "Remote hub",
       "country": "Australia",
       "region": "Arnhem Land",
-      "location_type": "School"
+      "loc_type": "School"
     },
     {
       "id": 2,
       "description": "Remote hub",
       "country": "Australia",
       "region": "Cape York",
-      "location_type": "Prison"
+      "loc_type": "Prison"
     },
     {
       "id": 3,
       "description": "Remote hub",
       "country": "Australia",
       "region": "Darwin",
-      "location_type": "Library"
+      "loc_type": "Library"
     }
   ]
 }

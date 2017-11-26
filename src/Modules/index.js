@@ -22,7 +22,7 @@ class Modules extends Component {
           <section className="container">
             <div className="sidebar-list">
               <ul>
-                <li><NavLink exact to={path.join(this.match.url, '/')} activeClassName="is-active">View all modules</NavLink></li>
+                <li><NavLink exact to={this.match.url} activeClassName="is-active">View all modules</NavLink></li>
                 <li><NavLink to={path.join(this.match.url, '/new')} activeClassName="is-active">Add new module</NavLink></li>
               </ul>
             </div>

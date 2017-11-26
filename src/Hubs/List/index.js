@@ -56,7 +56,7 @@ class List extends Component {
             return <li key={index} className="List__Item Hub">
               <div>
                 <div className="Hub__Name">{hub.region}, {hub.country}</div>
-                <div className="Hub__Description">{hub.description} - {hub.location_type}</div>
+                <div className="Hub__Description">{hub.description} - {hub.loc_type}</div>
               </div>
               <Link to={`${this.match.url}/edit/${hub.id}`} className="Button">
                 Edit

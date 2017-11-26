@@ -1,11 +1,11 @@
 {
   "id": 1,
-  "name": "Module 1",
-  "description": "Module 1 description",
-  "actors": "Some free text field, Actor Name",
+  "name": "The Diabetes Story",
+  "description": "Diabetes education",
+  "actors": "",
   "country": ["Australia"],
   "cultural_group": ["Aboriginal", "Torres Strait Islander"],
   "demographic": ["Adult", "Child"],
-  "path": "/path/to/module",
+  "path": "/path/diabetes_story.flv",
   "hubs": []
 }

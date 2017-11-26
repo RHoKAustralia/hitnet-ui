@@ -11,7 +11,7 @@ class Edit extends Component {
         country: '',
         region: '',
         description: '',
-        location_type: '',
+        loc_type: '',
         modules_list: []
       },
       isNewHub: !this.match.params.id,
@@ -81,7 +81,7 @@ class Edit extends Component {
           </label><br />
           <label>
             <span>Location type:</span>
-            <input type="text" value={this.state.hub.location_type} name="description" onChange={this.handleChange} />
+            <input type="text" value={this.state.hub.loc_type} name="description" onChange={this.handleChange} />
           </label><br />
 
           <button type="submit" className="Button">{this.state.isNewHub ? `Add` : `Update`} hub</button>
