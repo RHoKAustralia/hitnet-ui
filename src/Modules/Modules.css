@@ -2,6 +2,11 @@
   padding-bottom: 20px;
 }
 
+.Modules__Hub-Select {
+  width: 300px;
+  margin: 20px 0;
+}
+
 .Module {
 
 }
@@ -14,4 +19,11 @@
 .Module__Description {
   font-style: italic;
   font-size: 14px;
+}
+
+.Module__Hub-List {
+
+}
+.Module__Hub-List--Disabled {
+  opacity: 0.5
 }
