@@ -7,28 +7,31 @@ import './HeaderNav.css';
 const Header = () => (
   <header className="header">
     <div className="header__container">
-      <Link to="/" className="header__logo-link"><img src={logo} alt=""/></Link>
+      <Link to="/" className="header__logo-link">
+        <img src={logo} alt=""/>
+        <span>Kiosk Admin</span>
+      </Link>
 
       <nav className="nav">
         <ul>
           <li>
-            <NavLink 
+            <NavLink
               exact
-              to="/" 
+              to="/"
               activeClassName="is-active">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/modules" 
+            <NavLink
+              to="/modules"
               activeClassName="is-active">
               Modules
             </NavLink>
           </li>
           <li>
-            <NavLink 
-              to="/hubs" 
+            <NavLink
+              to="/hubs"
               activeClassName="is-active">
               Hubs
             </NavLink>
