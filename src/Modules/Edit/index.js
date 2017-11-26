@@ -27,7 +27,7 @@ class Edit extends Component {
     this.hubGroups = [
       "Nationally",
       "State",
-      "Region",
+      "Regionally",
       "Location type",
       "Individual hub",
       "None"
