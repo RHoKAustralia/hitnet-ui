@@ -5,6 +5,7 @@
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  border-bottom: 5px solid #e271aa;
 }
 
 .header__container {

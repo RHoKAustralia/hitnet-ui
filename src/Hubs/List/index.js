@@ -41,15 +41,19 @@ class List extends Component {
 
   render() {
     return (
-      <div className="List">
+      <div>
         <h2>View all hubs</h2>
-        <ul>
+        <ul className="List">
           {this.state.hubs.map((hub, index) => {
-            return <li key={index}>
-              <Link to={path.join(this.match.url, `/edit/${hub.id}`)}>
-                {hub.region}, {hub.country} <em>{hub.description}</em> - {hub.location_type}
+            return <li key={index} className="List__Item Hub">
+              <div>
+                <div className="Hub__Name">{hub.region}, {hub.country}</div>
+                <div className="Hub__Description">{hub.description} - {hub.location_type}</div>
+              </div>
+              <Link to={`${this.match.url}/edit/${hub.id}`} className="Button">
+                Edit
               </Link>
-              <button type="button" onClick={(e) => this.handleDelete(index, hub.id)}>
+              <button type="button" className="Button" onClick={(e) => this.handleDelete(index, hub.id)}>
                 Delete
               </button>
             </li>
