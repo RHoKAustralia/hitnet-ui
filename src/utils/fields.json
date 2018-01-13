@@ -1,0 +1,12 @@
+{
+  "demographics": [
+    { "id": "demographic_male_elder", "label": "Male Elder" },
+    { "id": "demographic_female_elder", "label": "Female Elder" },
+    { "id": "demographic_male_adult", "label": "Male Adult" },
+    { "id": "demographic_female_adult", "label": "Female Adult" },
+    { "id": "demographic_male_teen", "label": "Male Teen" },
+    { "id": "demographic_female_teen", "label": "Female Teen" },
+    { "id": "demographic_male_child", "label": "Male Child" },
+    { "id": "demographic_female_child", "label": "Female Child" }
+  ]
+}

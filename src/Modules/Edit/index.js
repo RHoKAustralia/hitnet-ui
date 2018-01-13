@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import api from '../../utils/api';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
+import { demographics } from '../../utils/fields.json'
+
 class Edit extends Component {
   constructor(props) {
     super();
@@ -12,7 +14,15 @@ class Edit extends Component {
         path: '',
         description: '',
         actors: '',
-        hubs: []
+        hubs: [],
+        demographic_male_elder: true,
+        demographic_female_elder: true,
+        demographic_male_adult: true,
+        demographic_female_adult: true,
+        demographic_male_teen: true,
+        demographic_female_teen: true,
+        demographic_male_child: true,
+        demographic_female_child: true,
       },
       isNewModule: !this.match.params.id, // so slick
       hubOptions: [
@@ -128,6 +138,13 @@ class Edit extends Component {
     }
   }
 
+  handleDemographicChange(event) {
+    let newState = { ...this.state }
+    newState.module[event.target.name] = !this.state.module[event.target.name];
+
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div className="Modules">
@@ -151,14 +168,13 @@ class Edit extends Component {
           </label><br />
           Demographic:
           <ul className="Input-List">
-            <li><label><input type="checkbox" name="demographic" /> Elder Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Elder Female</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Adult Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Adult Female</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Teen Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Teen Female</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Child Male</label></li>
-            <li><label><input type="checkbox" name="demographic" /> Child Female</label></li>
+            {demographics.map((item, index) => {
+              return (<li key={index}>
+                <label>
+                  <input type="checkbox" name={item.id} checked={this.state.module[item.id]} onChange={(e) => this.handleDemographicChange(e)} /> {item.label}
+                </label>
+              </li>)
+            })}
           </ul>
 
           <h3>Attach module to hubs</h3>
