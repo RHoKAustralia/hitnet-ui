@@ -7,5 +7,13 @@
   "cultural_group": ["Aboriginal", "Torres Strait Islander"],
   "demographic": ["Adult", "Child"],
   "path": "/path/diabetes_story.flv",
-  "hubs": []
+  "hubs": [],
+  "demographic_male_elder": true,
+  "demographic_female_elder": true,
+  "demographic_male_adult": true,
+  "demographic_female_adult": true,
+  "demographic_male_teen": true,
+  "demographic_female_teen": true,
+  "demographic_male_child": true,
+  "demographic_female_child": true
 }

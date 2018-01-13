@@ -4,5 +4,5 @@
   "country": "Australia",
   "region": "Arnhem Land",
   "loc_type": "School",
-  "modules_list": []
+  "modules_list": ["1", "2", "3"]
 }

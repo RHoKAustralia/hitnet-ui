@@ -1,14 +1,4 @@
 {
-  "countries": [
-    {
-      "label": "Australia",
-      "regions": ["Cape York", "Arnhem Land"]
-    }
-  ],
-  "cultural_groups": [
-    "Indigenous",
-    "Chinese"
-  ],
   "demographics": [
     { "id": "demographic_male_elder", "label": "Male Elder" },
     { "id": "demographic_female_elder", "label": "Female Elder" },
