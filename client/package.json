@@ -2,6 +2,9 @@
   "name": "hitnet-ui",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "8.9.x"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "react": "^16.1.1",
